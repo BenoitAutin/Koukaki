@@ -1,0 +1,86 @@
+@import "../../animations/animation.scss";
+
+.reveal {
+  transform: translateY(150px);
+  opacity: 0;
+}
+
+.reveal-loaded {
+  animation: $animation-fade-up;
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 7em;
+  padding-bottom: 1em;
+  overflow: hidden;
+
+  .oscars {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 14em;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+
+    li {
+      flex: 1;
+      text-align: center;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .orchid {
+    content: url('./assets/images/orchid.png');
+    position: absolute;
+    right: -4em;
+    top: 1em;
+  }
+  .hibiscus {
+    content: url('./assets/images/hibiscus_footer.png');
+    position: absolute;
+    left: calc(50% - 323px);
+    bottom: -28.5em;
+    z-index: -1;
+
+  }
+
+  .sunflower {
+    content: url('./assets/images/Sunflower.png');
+    position: absolute;
+    left: 4em;
+    top: 0em;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+  .oscars {
+    img {
+      width: 70%;
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .site-footer {
+    .sunflower, .orchid {
+      content: '';
+    }
+  }
+}
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  .site-footer {
+    .hibiscus {
+      content: '';
+
+    }
+  }
+}

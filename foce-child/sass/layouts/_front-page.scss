@@ -1,0 +1,303 @@
+@import "../animations/animation.scss";
+
+.reveal {
+  transform: translateY(150px);
+  opacity: 0;
+}
+
+.reveal-loaded {
+  animation: $animation-fade-up;
+}
+
+.animation-translate {
+  animation: $animation-translate;
+}
+
+.animation-scale {
+  animation: $animation-scale;
+}
+
+.cat {
+  animation: $animation-flottement;
+}
+
+.banner {
+  min-height: 806px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    position: relative;
+    margin-top: -10%;
+    width: 50%;
+    animation: $animation-flottement;
+  }
+}
+
+.fallback {
+  background-image: url("./assets/images/banner.png");
+}
+
+#background-video {
+  display: block;
+  position: absolute;
+  top: 48px;
+}
+
+.flower, .rotateFlower {
+  animation: $animation-rotation;
+  &__menu {
+    animation: $animation-rotation;
+  }
+}
+
+.story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__leave {
+    content: url('./assets/images/sunflower_leaves.png');
+    position: absolute;
+    left: 0;
+    top: 7.5em;
+    z-index: -1;
+  }
+  &__flower {
+    content: url('./assets/images/Sunflower.png');
+    position: absolute;
+    left: 3em;
+    top: 26em;
+  }
+  &__leave2 {
+    content: url('./assets/images/hibiscus_leaves.png');
+    position: absolute;
+    left: 52%;
+    top: 10em;
+    z-index: -1;
+  }
+  &__flower2 {
+    content: url('./assets/images/Hibiscus.png');
+    position: absolute;
+    left: calc(52% + 414px);
+    top: 4em;
+  }
+
+  &__article {
+    text-align: center;
+    width: 50%;
+    font-size: 15px;
+    padding-bottom: 2em;
+    background-color: $color__background-body;
+  }
+  #characters {
+    width: 100%;
+    margin: 6em 0 6em 0;
+    h3 {
+      background-image: url("./assets/images/orange_characters_bg.png");
+      padding: 1em;
+      margin-left: 120px;
+      background-position: left;
+      text-align: left;
+    }
+  }
+  .swiper {
+    width: 90%;
+    padding-bottom: 60px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 440px;
+    height: 440px;
+    p {
+      text-align: center;
+      margin-top: 430px;
+      font-size: 1.5em;
+    }
+  }
+  .slide1 {
+    background-image: url("./assets/images/Kawaneko.png");
+  }
+  .slide2 {
+    background-image: url("./assets/images/Orenjiiro-1.png");
+  }
+  .slide3 {
+    background-image: url("./assets/images/Pinku-1.png");
+  }
+  .slide4 {
+    background-image: url("./assets/images/Tenshi-1.png");
+  }
+  .slide5 {
+    background-image: url("./assets/images/Jaakuna-1.png");
+  }
+  #place {
+    display: flex;
+    justify-content: space-around;
+    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+    width: 100%;
+    min-height: 699px;
+    background-size: cover;
+    h3 {
+      background-image: url("./assets/images/orange_place_bg.png");
+      margin-bottom: -1em;
+    }
+    > div {
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 6em;
+      p {
+        padding-left: 5em;
+      }
+    }
+    .blue-cloud {
+      display: flex;
+      background-image: url("./assets/images/clouds.png");
+      position: relative;
+      left: 600px;
+      width: 100%;
+      height: 304px;
+      margin-top: 30px;
+    }
+  }
+}
+
+#studio {
+  position: relative;
+  margin-top: 3em;
+  .studio__flower {
+    content: url('./assets/images/flower.png');
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
+  }
+  > .studio__p {
+    display: flex;
+    justify-content: space-between;
+    width: 66.66%;
+    margin: auto;
+    &::before {
+      content: url('./assets/images/trple-leaf.png');
+      position: absolute;
+      left: calc(50% - 17.225px);
+      top: 40%;
+    }
+    p{
+    width: 44.5%;
+    }
+  }
+  .studio__flower2 {
+    content: url('./assets/images/random_flower.png');
+    position: absolute;
+    left: -5em;
+    top: 0;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__laptop}) {
+  
+  .story {
+    &__article {
+      &::before {
+        left: 40%;
+        top: 8em;
+      }
+      &::after {
+        left: calc(40% + 414px);
+        top: 2em;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+
+  .banner video {
+    display: none !important;
+  }
+
+  .story {
+    &__leave2 {
+      left: calc(33% + 75px);
+    }
+    &__flower2 {
+      left: calc(33% + 490px);
+    }
+  }
+  .swiper-slide {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .story {
+    &__leave, 
+    &__flower, 
+    &__flower2, 
+    &__leave2 {
+      content: '';
+    }
+
+    &__article {
+      width: 80%;
+      &::before {
+        content: '';
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+    #characters {
+      flex-direction: column;
+    }
+    #place {
+      .blue-cloud {
+        display: none;
+      }
+      > div {
+        margin: auto;
+        width: 75%;
+      }
+    }
+  }
+  #studio {
+    > div {
+      &::before {
+        content: '';
+      }
+      flex-direction: column;
+      p {
+        width: 100%;
+      }
+    }
+    .studio {
+      &__flower,
+      &__flower2,
+      &__p::before {
+        content: '';
+      }
+      &__p {
+        p {
+          width: 100%;
+        }
+      }    
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  #studio {
+    h2 {
+      &::before{
+        content: '';
+      }
+    }
+  }
+}
